@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch & Display Todos</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #f1f5f9;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+        color: #0f172a;
+      }
+
+      .sub {
+        color: #475569;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .status {
+        background: #f8fafc;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 14px;
+        color: #334155;
+        margin-bottom: 16px;
+        border: 1px solid #e2e8f0;
+      }
+
+      .todo-list {
+        list-style: none;
+      }
+
+      .todo-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 14px;
+        background: #fafcff;
+        border-radius: 12px;
+        margin-bottom: 6px;
+        border: 1px solid #eef2f6;
+        transition: 0.1s;
+      }
+
+      .todo-item:hover {
+        background: #f8fafc;
+      }
+
+      .todo-item input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: #3b82f6;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .todo-item .title {
+        flex: 1;
+        font-size: 15px;
+        color: #0f172a;
+      }
+
+      .todo-item .title.done {
+        text-decoration: line-through;
+        color: #94a3b8;
+      }
+
+      .todo-item .id-badge {
+        font-size: 11px;
+        background: #e2e8f0;
+        padding: 2px 10px;
+        border-radius: 30px;
+        color: #334155;
+        font-weight: 500;
+      }
+
+      .error {
+        color: #b91c1c;
+        background: #fee2e2;
+        padding: 12px 16px;
+        border-radius: 12px;
+      }
+
+      .footer {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #64748b;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 16px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>📋 Todos from JSON</h1>
+      <p class="sub">
+        Fetching from <code>jsonplaceholder.typicode.com/todos</code>
+      </p>
+
+      <!-- Status message -->
+      <div class="status" id="status">Loading todos...</div>
+
+      <!-- List will be rendered here -->
+      <ul class="todo-list" id="todoList"></ul>
+
+      <div class="footer">✅ Showing first 10 todos</div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
++
